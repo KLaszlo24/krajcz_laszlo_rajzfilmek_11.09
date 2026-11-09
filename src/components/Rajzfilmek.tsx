@@ -9,6 +9,8 @@ type Rajzfilmprops = {
 export function RajzfilmKartya({ rajzfil }: Rajzfilmprops) {
   const [premierlathato, setPremierLathato] = useState(true);
 
+  
+
   return (
     <>
       <h2>{rajzfil.cim}</h2>
@@ -16,10 +18,7 @@ export function RajzfilmKartya({ rajzfil }: Rajzfilmprops) {
         Studio: 
         <i> {rajzfil.studio}</i>
       </p>
-      <p>
-        Megjelenés éve: <b> {rajzfil.megjelenesEve}</b>
-      </p>
-       <p className="card-text"> <b>{rajzfil.megjelenesEve}</b> 
+       <p className="card-text">Megjelenés éve:  <b>{rajzfil.megjelenesEve}</b> 
        - {rajzfil.megjelenesEve < 2000 ? "Klasszikus filmek" : rajzfil.megjelenesEve <= 2010 ? "Régebbi rajzfilm" : "Modern rajfilm"} </p>
       {premierlathato && <p>Premier: {rajzfil.premier}</p>}
       <button onClick={() => setPremierLathato(!premierlathato)}>
