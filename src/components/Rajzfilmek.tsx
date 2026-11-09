@@ -13,12 +13,14 @@ export function RajzfilmKartya({ rajzfil }: Rajzfilmprops) {
     <>
       <h2>{rajzfil.cim}</h2>
       <p>
-        Studio: {rajzfil.studio}
-        <i></i>
+        Studio: 
+        <i> {rajzfil.studio}</i>
       </p>
       <p>
-        Megjelenés éve: <b>{rajzfil.megjelenesEve}</b>
+        Megjelenés éve: <b> {rajzfil.megjelenesEve}</b>
       </p>
+       <p className="card-text"> <b>{rajzfil.megjelenesEve}</b> 
+       - {rajzfil.megjelenesEve < 2000 ? "Klasszikus filmek" : rajzfil.megjelenesEve <= 2010 ? "Régebbi rajzfilm" : "Modern rajfilm"} </p>
       {premierlathato && <p>Premier: {rajzfil.premier}</p>}
       <button onClick={() => setPremierLathato(!premierlathato)}>
         {premierlathato ? "Premier elrejtése" : "premier megjelenítése"}
